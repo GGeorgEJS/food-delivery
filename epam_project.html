@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		li{
+			list-style: none;
+		}
+
+		a{
+			text-decoration: none;
+		}
+		
+		header{
+			height: 100vh;
+			background: url(images/background.jpg);
+		}
+
+		.header_container{
+			display: flex;
+		    flex-direction: row;
+		    position: fixed;
+		    z-index: 6;
+		    width: 100%;		    border-bottom: 1px solid #fff;
+		    background-color: #000;
+		}
+		.header_nav{
+			width: 77%;
+		}
+		.header_menu{
+			width: 100%;
+			transition: all .8s
+		}
+		.header_menu ul>li{
+			    padding: 2%;
+			    border-right: 1px solid wheat;
+			    display: inline-block;
+		}
+		.header_menu ul li a{
+			color: wheat;
+			font-size: 1.2em;
+		}
+		#burger{
+			display: none;
+		}
+		.header_burger{
+			display: none;
+		}
+		.header_burger label{
+			align-self: center;
+		}
+		.burger_btn {
+		  width: 35px;
+		  height: 5px;
+		  background-color: wheat;
+		  margin: 6px 0;
+		}
+		.header_singUp{
+			display: flex;
+			padding: 0 0.5%;
+			transition: all .5s;
+		}
+		.header_singUp a{
+			align-self: center;
+			color: wheat;
+		}
+		.basket{
+			display: flex;
+			padding: 0 0.5%;
+			transition: all .5s;
+		}
+		.basket>label{
+			align-self: center;
+			color: wheat;
+		}
+		
+		.basket_container{
+			width: 30%;
+		    height: 100vh;
+		    position: fixed;
+		    background: white;
+		    right: -30%;
+		    top: 10%;
+		    z-index: 5;
+		    transition: all .5s;
+		}
+
+		.products{
+			overflow-y: scroll;
+			height: 50%;
+		}
+		input[name=basket]{
+			position: fixed;
+			display: none;
+		}
+		.src{
+			flex-basis: 35%;
+		}
+		.src_local{
+			max-width: 100%;
+		}
+		input[name=basket]:checked ~ .basket_container{
+			right: 0%;
+		}
+		.delete{
+			order: 5;
+		}
+		.module{
+			width: 90%;
+		    top: 5%;
+		    display: none;
+		    position: fixed;
+		    height: 90vh;
+		    background: rgba(0,0,0,0.8);
+		    color: white;
+		    flex-direction: row;
+    		flex-wrap: wrap;
+	        z-index: 5;
+		}
+		.src_mod{
+			padding: 2%;
+   			align-self: center;
+		}
+		.name_mod{
+			flex-basis: 15%;
+    		align-self: center;
+		}
+		.description_mod{
+			flex-basis: 50%;
+    		align-self: center;
+		}
+		.price_mod{
+			flex-basis: 80%;
+		}
+
+
+		.main_content{
+			width: 100%;
+		}
+		.main_food{
+			width: 23%;
+			display: inline-block;
+			position: relative;
+			padding: 5%;
+			cursor: pointer;
+		}
+		.main_picture{
+			position: relative;
+			width: 253px;
+			height: 200px;
+		}
+		.main_info{
+			width: 94%;
+			overflow: hidden;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.name{
+			font-size: 2em;
+			padding: 2%;
+			display: flex;
+			flex-basis: 100%;
+			justify-content: center;
+		}
+		.description{
+			padding: 5%;
+		}
+		.price{
+			flex-basis: 50%;
+			padding: 5%;
+		}
+		.weigth{
+			flex-basis: 12%;
+			padding: 5%;
+		}
+
+		.btn{
+			align-self: center;
+			text-align: center;
+			padding: 2%;
+			margin-left: 30%;
+			background-color: wheat;
+			flex-basis: 35%;
+			
+		}
+		.pag{
+			display: flex;
+			justify-content: center;
+		}
+
+		@media (max-width: 500px){
+			header{
+				background: url(images/background_phone.jpg);
+				background-position-x: 50%; 
+			}
+			.header_nav{
+				width: 90%;
+				flex-direction: column;
+			}
+			.header_menu{
+				visibility: hidden;
+				position: absolute;
+				top: 6.5%;
+				left: -25%;
+				width: 0;
+				background-color: #000;
+			}
+			.header_menu ul li{
+				display: block;
+				margin: 5%;
+			}
+			.header_burger{
+				display:flex;
+			}
+
+			.header_singUp{
+				display: none;
+			}
+			input[name=burger]:checked ~ .header_nav>.header_menu{
+				visibility: visible;
+				left: -3%;
+				width: 103%;
+			}
+			.main_food{
+				width: 67.2%;
+			}
+			.basket_container{
+				width: 100%;
+				right: -100%;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header_container">
+			<input type="checkbox" name="burger" id="burger">
+			<div class="header_nav">
+				<div class="header_menu">
+					<ul>
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">Something</a></li>
+						<li><a href="#">Something</a></li>
+						<li><a href="#">Something</a></li>
+						<li><a href="#">Something</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_burger">
+				<label for="burger">
+					<div class="burger_btn"></div>
+					<div class="burger_btn"></div>
+					<div class="burger_btn"></div>
+				</label>
+			</div>
+			<div id="lol" class="header_singUp">
+				<a href="#">Login</a>
+			</div>
+			<div class="basket">
+				<label for="basket">basket</label>
+			</div>
+		</div>
+		<input type="checkbox" name="basket" id="basket">
+		<div class="basket_container">
+			<h1>Basket</h1>
+			<div class="products">
+				
+			</div>
+			<div>
+				<span>Price</span>
+				<span id="price"></span>
+			</div>
+			<div>Zakazat'</div>
+		</div>
+	</header>
+	<section id="main_content" class="main_content">
+		<div class="search">
+			<form name="search">
+				<input type="text" id="ser">
+				<input type="submit">
+			</form>
+		</div>
+		<div class="module">
+
+		</div>
+		<div id="cont">
+			
+		</div>
+		<div id="pag"></div>
+	</section>
+	<script src="data.json"></script>
+	<script type="text/javascript">
+		let res = JSON.parse(data);
+		let con = document.getElementById("cont");
+		let arr = JSON.parse(sessionStorage.getItem("zakaz")) || [];
+		let basket_container = document.querySelector(".basket_container");
+		let basket = document.getElementById("basket");
+		let basket_products = document.querySelector(".products");
+		let basket_price = document.getElementById("price");
+		let mod = document.querySelector(".module");
+		let form = document.forms["search"];
+		let inputText = form.elements["ser"];
+		let pag = document.getElementById("pag");
+
+		
+
+
+
+		
+		function getDay(){
+			let date = new Date();
+			let day = date.getDay();
+			for(let key in res){
+				if(key == day){
+					sessionStorage.setItem("day", JSON.stringify(res[key]));
+					console.log(res[key]);
+					main(res[key], 1);
+					break;
+				}
+			}
+		}
+
+		function div_delete(){
+			let div = document.createElement("div");
+			let span = document.createElement("span");
+			span.textContent = "X";
+			div.className = "delete"; 
+			span.className = "delete";
+			div.appendChild(span)
+
+			return div;
+		}
+
+		function clear(selector){
+			selector.innerHTML = "";
+		}
+
+		function get_Price(){
+			let total = arr.map(item => item.price_local * item.count).reduce((a,b) => a + b, 0);
+			basket_price.innerHTML = total;
+			
+		}
+
+		function minus(name){
+			arr.forEach((item, i) => {
+				if(item.name_local === name){
+					if(item.count === 1){
+						arr.splice(i, 1)
+					}
+					else{
+						item.count -= 1;
+					}	
+				}
+				
+			});
+			return arr;
+		}
+
+		function choose(data, func){
+			let name = "";
+			for(let i = 0; i < data.length; ++i){
+				if(data[i].classList.value === "name_local"){
+					name = data[i].innerHTML;
+					break;
+				}
+			}
+			let arr = func(name);
+			sessionStorage.setItem("zakaz", JSON.stringify(arr));
+			basket_content();
+		}
+
+		function plus(name){
+			arr.forEach((item, i) => {
+				if(item.name_local === name){
+					item.count += 1;
+				}
+			});
+			return arr;
+		}
+
+		function delet(name){
+			arr.forEach((item, i) => {
+				if(item.name_local === name){
+					arr.splice(i, 1);
+				}
+			});
+			return arr;
+		}
+
+		function div_minus(key, value){
+			let div = document.createElement("div");
+			div.className = key;
+			let span_minus = document.createElement("span");
+			span_minus.innerHTML = "----";
+			span_minus.className = "minus";
+			let span_plus = document.createElement("span")
+			span_plus.innerHTML = "+++";
+			span_plus.className = "plus";
+			let span_count = document.createElement("span")
+			span_count.innerHTML = value;
+			span_count.className = key;
+			div.appendChild(span_minus);
+			div.appendChild(span_count);
+			div.appendChild(span_plus);
+			return div;
+		}
+
+
+		function picture(value, key){
+			let picture = document.createElement("img");
+			picture.setAttribute("src", value);
+			picture.className = key;
+
+			return picture;
+		}
+
+		function createDiv(key, value){
+			let div = document.createElement("div");
+			let reg = /src/;
+			if(key.match(reg)){
+				let img = picture(value, key);
+				div.className = "src";
+				div.appendChild(img);
+			} else {
+				div.className = key;
+				div.textContent = value;
+			}
+			return div;
+		}
+
+		function div_mainInfo(content){
+			let info_div = document.createElement("div");
+			for(let key in content){
+				let div;
+					if(key === "price_local"){
+						div = div_delete();
+					}
+					else if(key === "count"){
+						div = div_minus(key, content[key]);
+					}
+					else{
+						div = createDiv(key, content[key]);
+					}
+					info_div.appendChild(div);
+				}
+
+			info_div.className = "main_info";
+			return info_div;
+		}
+
+
+
+		function divTempleate(content){
+			
+			let main_food = document.createElement("div");
+			main_food.className = "main_food";
+			let info = div_mainInfo(content);
+			main_food.appendChild(info);
+
+			return main_food;
+			
+		}
+
+		// function pagination(data, el){
+		// 	let length = data.length;
+		// 	count = 1;
+		// 	while(length - 6 > 0){
+		// 		let span = document.createElement("span");
+		// 		span.textContent = count;
+		// 		pag.appendChild(span);
+		// 	}
+
+		// 	for(let i = (el * 6) - 6,let j = el *6; i < j; ++i){
+		// 		let main_food = divTempleate(contents[i]);
+		// 		con.appendChild(main_food);
+		// 	}
+
+		// }
+
+		function main(contents, el){
+			clear(con);
+			let length = contents.length;
+			count = 1;
+			while(length > 0){
+				let span = document.createElement("span");
+				span.textContent = count;
+				span.className = "pa"
+				pag.appendChild(span);
+				count += 1;
+				length -= 6
+			}
+
+			for(let i = (el * 6) - 6, j = el *6; i < j; ++i){
+				let main_food = divTempleate(contents[i]);
+				con.appendChild(main_food);
+			}
+		}
+
+		function basket_content(){
+			clear(basket_products);
+			arr.forEach(item => {
+				let div = div_mainInfo(item);
+				basket_products.appendChild(div);
+			})
+			get_Price();
+		}
+
+		function session(data){
+			let info = {};
+			for(let i = 0; i < data.length; ++i){
+				if(data[i].classList.value === "src") info[data[i].classList.value + "_local"] = data[i].firstChild.getAttribute("src");
+				else if(data[i].classList.value === "name") info[data[i].classList.value + "_local"] = data[i].innerHTML;
+				else if(data[i].classList.value === "price") info[data[i].classList.value + "_local"] = data[i].innerHTML;
+
+			}
+			info.count = 1;
+			for(let i = 0; i < arr.length; ++i){
+				if(arr[i].name_local === info.name_local){
+					arr[i].count += 1;
+					info = arr[i];
+					arr.splice(i, 1);
+				}
+			}
+			arr.push(info);
+			sessionStorage.setItem("zakaz", JSON.stringify(arr));
+			basket_content();
+		}
+
+		function module(inner){
+			clear(mod);
+			mod.style.display = "flex";
+			let span = document.createElement("span");
+			span.className = "close";
+			span.textContent = "X";
+			mod.appendChild(span);
+			inner.forEach(item => {
+				let div = document.createElement("div");
+				div.className = item.classList.value + "_mod";
+				div.insertAdjacentHTML("afterbegin", item.innerHTML);
+				mod.appendChild(div);
+			});
+		}
+
+		function search(patern){
+			let arr2 = [];
+			let pat = new RegExp(patern);
+			let arr = JSON.parse(sessionStorage.getItem("day"));
+			arr.forEach((item, i) => {
+				if(item.name.match(pat)){
+					arr2[i] = item;
+				}
+			});
+			main(arr2, 1);
+		}
+
+
+		con.addEventListener("click", function(e){
+			if(e.target.classList.contains("btn")){
+				let parent = e.target.parentNode;
+				session(parent.childNodes);
+			} else if(e.target.classList.contains("name")){
+				let parent = e.target.parentNode;
+				module(parent.childNodes);
+			}
+		});
+
+		basket.addEventListener("change", function(e){
+			if(this.checked){
+				basket_content();
+			}
+		});
+
+		basket_products.addEventListener("click", function(e){
+			let child = e.target.parentNode;
+			let parent = child.parentNode;
+			if(e.target.classList.contains("minus")){
+				choose(parent.childNodes, minus);
+			} 
+			else if(e.target.classList.contains("plus")){
+				choose(parent.childNodes, plus);
+			} 
+			else if(e.target.classList.contains("delete")){
+				choose(parent.childNodes, delet);
+			}
+		});
+
+		mod.addEventListener("click", function(e){
+			if(e.target.classList.contains("close")){
+				mod.style.display = "none";
+			}
+		})
+
+		form.addEventListener("submit", function(e){
+			e.preventDefault();
+
+			if(!inputText.value){
+				inputText.classList.add('is-invalid');
+			}
+			else {
+				inputText.classList.remove('is-invalid');
+				search(inputText.value);
+				form.reset();
+			}
+		})
+
+
+
+		getDay();
+
+
+		
+		
+	</script>
+</body>
+</html>

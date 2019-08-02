@@ -1,0 +1,66 @@
+
+// data = {
+// 	"Monday": {
+// 		"1": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		},
+// 		"2": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		},
+// 		"3": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		}
+// 	},
+// 	"Tuesday": {
+// 		"4": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		},
+// 		"5": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		},
+// 		"6": {
+// 			"src": "images/food_picture.jfif", 
+// 			"name": "NNN",  
+// 			"description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", 
+// 			"price": "32",  
+// 			"weigth": "43", 
+// 			"btn": "Заказать"
+// 		}
+// 	}
+// };
+
+
+
+
+
+
+
+
+
+
+data = '{"3": [{"src" : "images/food_picture.jfif", "name": "NNN",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"}], "5":[{"src" : "images/food_picture.jfif", "name": "NNN2",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN3",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN4",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN2",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN3",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN4",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN2",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN3",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN4",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN2",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN3",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"},{"src" : "images/food_picture.jfif", "name": "NNN4",  "description": "Рол фiладельфiя кунсей, Рол калiфорнiя, Макi з масляною, Макi з лососем, Рол фiладельфiя з лососем, Чiзу рол", "price": "32",  "weigth": "43", "btn": "Заказать"}]}';
